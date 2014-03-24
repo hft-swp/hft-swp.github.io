@@ -6,9 +6,12 @@ title: Tafelaufschriebe
 <h1>Tafelaufschriebe</h1>
 <div class="popup-gallery">
     {% for board in site.data.boards %}
-    <a href="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/{{ board.filename }}" title="{{ board.title }}">
-        <img src="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/thumb_{{ board.filename }}" height="100" />
-    </a>
+        {% if board.heading %}
+            <h2>{{ board.heading }}</h2>
+        {% endif %}
+        <a href="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/{{ board.filename }}" title="{{ board.title }}">
+            <img src="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/thumb_{{ board.filename }}" height="100" />
+        </a>
     {% endfor %}
 </div>
 
