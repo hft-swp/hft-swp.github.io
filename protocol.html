@@ -4,7 +4,29 @@ title: Tafelaufschriebe
 ---
 
 <h1>Tafelaufschriebe</h1>
-<h2>17.03.2014</h2>
-<div>
-    <img src="/static/img/boards/2014-03-17 09.39.49.jpg" class="img-responsive"/>
+<div class="popup-gallery">
+    {% for board in site.data.boards %}
+    <a href="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/{{ board.filename }}" title="{{ board.title }}">
+        <img src="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/thumb_{{ board.filename }}" height="100" />
+    </a>
+    {% endfor %}
 </div>
+
+<script>
+$(document).ready(function() {
+        $('.popup-gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                mainClass: 'mfp-fade',
+                gallery: {
+                        enabled: true,
+                        navigateByImgClick: true,
+                        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+                }
+        });
+});
+</script>
