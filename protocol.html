@@ -3,6 +3,11 @@ layout: base
 title: Tafelaufschriebe
 ---
 
+<h1>Wikidocumentation</h1>
+<div>
+    <p> Eine Liste der Protokolle zu allen Montagsterminen könnt ihr im <a href="https://github.com/hft-swp/stuff/wiki/Montagsprotokolle">Wiki</a> finden.</p>
+</div>
+
 <h1>Tafelaufschriebe</h1>
 <div class="popup-gallery">
     {% for board in site.data.boards %}
@@ -13,10 +18,6 @@ title: Tafelaufschriebe
             <img src="https://raw.githubusercontent.com/hft-swp/stuff/master/boards/thumb_{{ board.filename }}" height="100" />
         </a>
     {% endfor %}
-</div>
-<h1>Wikidocumentation</h1>
-<div>
-    <p> Eine Liste der Protokolle zu allen Montagsterminen könnt ihr im <a href="https://github.com/hft-swp/stuff/wiki/Montagsprotokolle">Wiki</a> finden.</p>
 </div>
 
 <script>
